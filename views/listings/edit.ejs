@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WandeLust</title>
+</head>
+<body>
+    <h3>New listing details</h3>
+    <form action="/listings/<%= listing._id %>/edit?_method=PUT" method="POST"  >
+        Title:
+        <input type="text" name="listing[title]" value="<%= listing.title %>">
+        <br><br>
+        Description:
+        <textarea name="listing[description]" id=""><%= listing.description %></textarea>
+        <br><br>
+        Image:
+        <input type="text" name="listing[image]" value="<%= listing.image %>">
+        <br><br>
+        Price:
+        <input type="number" name="listing[price]" value="<%= listing.price %>">
+        <br><br>
+        Location:
+        <input type="text" name="listing[location]" value="<%= listing.location %>">
+        <br><br>
+        Country:
+        <input type="text" name="listing[country]" id="" value="<%= listing.country %>">
+        <br><br>
+        <button>Edit Listing</button>
+    </form>
+</body>
+</html>
