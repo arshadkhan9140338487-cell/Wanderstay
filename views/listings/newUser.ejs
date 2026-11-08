@@ -1,43 +1,87 @@
 <% layout("/layouts/boilerplate") %>
 
-    <div class="row">
-        <div class="col-10">
+<div class="row">
+  <div class="col-10">
     <h3>New listing details</h3>
-    <form action="/listings" method="POST">
-        <div class="from-field">
+    <form action="/listings" method="POST" data-bs-validate novalidate>
+      <div class="from-field">
         <label for="listing-title" class="form-label">Title</label>
-        <input type="text" id="listing-title" name="listing[title]" placeholder="Enter title here." class="form-control">
-        </div>
+        <input
+          type="text"
+          id="listing-title"
+          name="listing[title]"
+          placeholder="Enter title here."
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Please provide a title</div>
+      </div>
 
-        <div class="from-field">
+      <div class="from-field">
         <label for="listing-description" class="form-label">Description</label>
-        <textarea name="listing[description]" id="listing-description" placeholder="Write description here." class="form-control"></textarea>
-        </div>
+        <textarea
+          name="listing[description]"
+          id="listing-description"
+          placeholder="Write description here."
+          class="form-control"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Please write a discription.</div>
+      </div>
 
-        <div class="from-field">
+      <div class="from-field">
         <label for="listing-image" class="form-label">Image URL/Link</label>
-        <input type="text" id="listing-image" name="listing[image]" placeholder="Enter image URL/Link here." class="form-control">
-        </div>
+        <input
+          type="text"
+          id="listing-image"
+          name="listing[image]"
+          placeholder="Enter image URL/Link here."
+          class="form-control"
+        />
+      </div>
 
-        <div class="row">
+      <div class="row">
         <div class="from-field col-4">
-        <label for="listing-price" class="form-label">Price</label>
-        <input type="number" id="listing-price" name="listing[price]" placeholder="Enter price here." class="form-control">
+          <label for="listing-price" class="form-label">Price</label>
+          <input
+            type="number"
+            id="listing-price"
+            name="listing[price]"
+            placeholder="Enter price here."
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please provide valid price.</div>
         </div>
 
         <div class="from-field col-8">
-        <label for="listing-country" class="form-label">Country</label>
-        <input type="text" id="listing-country" name="listing[country]" placeholder="Enter country name here." class="form-control">
+          <label for="listing-country" class="form-label">Country</label>
+          <input
+            type="text"
+            id="listing-country"
+            name="listing[country]"
+            placeholder="Enter country name here."
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please provide country.</div>
         </div>
-        </div>
+      </div>
 
-        <div class="from-field mb-4">
+      <div class="from-field mb-4">
         <label for="listing-location" class="form-label">Location</label>
-        <input type="text" id="listing-location" name="listing[location]" placeholder="Enter location here," class="form-control">
-        </div>
+        <input
+          type="text"
+          id="listing-location"
+          name="listing[location]"
+          placeholder="Enter location here,"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Please provide location</div>
+      </div>
 
-        <button class="btn btn-dark add-btn">Add</button>
+      <button class="btn btn-dark add-btn">Add</button>
     </form>
-    </div>
-    </div>
-
+  </div>
+</div>
